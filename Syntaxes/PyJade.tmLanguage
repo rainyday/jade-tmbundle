@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
 	<array>
-		<string>jade</string>
+		<string>py.jade</string>
+		<string>pyjade</string>
 	</array>
 	<key>name</key>
-	<string>Jade</string>
+	<string>Jade (Python)</string>
 	<key>patterns</key>
 	<array>
 		<dict>
@@ -16,7 +17,7 @@
 			<key>match</key>
 			<string>^(!!!|doctype)(\s*[a-zA-Z0-9-_]+)?</string>
 			<key>name</key>
-			<string>meta.tag.sgml.doctype.html</string>
+			<string>comment.other.doctype.jade</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -65,12 +66,12 @@
 			<key>end</key>
 			<string>^(?!(\1\s)|\s*$)</string>
 			<key>name</key>
-			<string>source.js</string>
+			<string>javascript.embedded.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -90,7 +91,7 @@
 			<key>end</key>
 			<string>^(?!(\1\s)|\s*$)</string>
 			<key>name</key>
-			<string>meta.tag.other</string>
+			<string>source.script.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -125,13 +126,13 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^(\s*)(style)((\.$)|(?=[.#(].*\.$))</string>
+			<string>^(\s*)(style)(?=[.#(\s])</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>2</key>
@@ -145,7 +146,7 @@
 			<key>end</key>
 			<string>^(?!(\1\s)|\s*$)</string>
 			<key>name</key>
-			<string>meta.tag.other</string>
+			<string>source.style.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -278,6 +279,8 @@
 			</dict>
 			<key>end</key>
 			<string>^(?!(\1\s)|\s*$)</string>
+			<key>name</key>
+			<string>source.stylus.filter.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -389,13 +392,15 @@
 				<key>4</key>
 				<dict>
 					<key>name</key>
-					<string>meta.tag.other entity.name.tag.jade</string>
+					<string>entity.name.tag.jade</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>Generated from dot_block_tag.py</string>
 			<key>end</key>
 			<string>^(?!(\1\s)|\s*$)</string>
+			<key>name</key>
+			<string>text.block.dot.tag.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -446,6 +451,8 @@
 			<string>All constructs that generally span a single line starting with any number of white-spaces.</string>
 			<key>end</key>
 			<string>$</string>
+			<key>name</key>
+			<string>tag.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -516,6 +523,8 @@
 					<string>Line starting with characters incompatible with tag name/id/class is standalone text.</string>
 					<key>end</key>
 					<string>$</string>
+					<key>name</key>
+					<string>text.jade</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -608,7 +617,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -647,7 +656,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>source.js</string>
+							<string>source.python</string>
 						</dict>
 					</array>
 				</dict>
@@ -690,7 +699,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -700,6 +709,8 @@
 			<string>(?=[\w.#])|(:\s*)</string>
 			<key>end</key>
 			<string>(\.?$)|(?=:.)</string>
+			<key>name</key>
+			<string>complete_tag.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -838,6 +849,8 @@
 					<string>string.value.args.filter.jade</string>
 					<key>end</key>
 					<string>((?=\))|,|$)</string>
+					<key>name</key>
+					<string>attributes.tag.jade</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -893,7 +906,7 @@
 					<array>
 						<dict>
 							<key>include</key>
-							<string>source.js</string>
+							<string>source.python</string>
 						</dict>
 					</array>
 				</dict>
@@ -1015,6 +1028,8 @@
 			<string></string>
 			<key>end</key>
 			<string>(?=\])</string>
+			<key>name</key>
+			<string>text.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1077,7 +1092,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1103,7 +1118,7 @@
 			<key>end</key>
 			<string>(?=\])|$</string>
 			<key>name</key>
-			<string>source.meta.function</string>
+			<string>meta.mixin.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1149,8 +1164,6 @@
 			</dict>
 			<key>end</key>
 			<string>(?=\])|$</string>
-			<key>name</key>
-			<string>source.js</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1159,7 +1172,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1217,7 +1230,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1249,7 +1262,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1281,7 +1294,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1300,7 +1313,7 @@
 			<key>end</key>
 			<string>(\))</string>
 			<key>name</key>
-			<string>meta.tag.other</string>
+			<string>attributes.tag.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1314,6 +1327,8 @@
 					</dict>
 					<key>match</key>
 					<string>([^\s(),=/]+)\s*((?=\))|,|\s+|$)(?!\!?\=)</string>
+					<key>name</key>
+					<string>attributes.tag.jade</string>
 				</dict>
 				<dict>
 					<key>begin</key>
@@ -1333,6 +1348,8 @@
 					</dict>
 					<key>end</key>
 					<string>(,|$|(?=\)|((?&lt;![+/*|&amp;=:^~!?&lt;&gt;%-])\s+[^+/*|&amp;=:^~!?&lt;&gt;%-])))</string>
+					<key>name</key>
+					<string>attributes.tag.jade</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1353,7 +1370,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>source.js</string>
+							<string>source.python</string>
 						</dict>
 					</array>
 				</dict>
@@ -1396,7 +1413,7 @@
 			<key>end</key>
 			<string>(\))</string>
 			<key>name</key>
-			<string>meta.tag.other</string>
+			<string>attributes.tag.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1407,7 +1424,7 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
@@ -1418,7 +1435,7 @@
 			<key>end</key>
 			<string>(\G(?&lt;!\5[^\w-]))|\}|$</string>
 			<key>name</key>
-			<string>meta.tag.other entity.name.tag.jade</string>
+			<string>entity.name.tag.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1427,7 +1444,7 @@
 					<key>end</key>
 					<string>(?=\})</string>
 					<key>name</key>
-					<string>meta.tag.other entity.name.tag.jade</string>
+					<string>entity.name.tag.jade</string>
 					<key>patterns</key>
 					<array>
 						<dict>
@@ -1438,7 +1455,7 @@
 						</dict>
 						<dict>
 							<key>include</key>
-							<string>source.js</string>
+							<string>source.python</string>
 						</dict>
 					</array>
 				</dict>
@@ -1450,6 +1467,8 @@
 			<string>(?=.)</string>
 			<key>end</key>
 			<string>$</string>
+			<key>name</key>
+			<string>text.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1491,7 +1510,7 @@
 			<key>end</key>
 			<string>(?=\])|$</string>
 			<key>name</key>
-			<string>source.js</string>
+			<string>javascript.embedded.jade</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -1500,14 +1519,14 @@
 				</dict>
 				<dict>
 					<key>include</key>
-					<string>source.js</string>
+					<string>source.python</string>
 				</dict>
 			</array>
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.jade</string>
+	<string>source.pyjade</string>
 	<key>uuid</key>
-	<string>eee6ba25-6ac2-4f7e-9c70-cddf2bd3448b</string>
+	<string>2af009be-05cb-4536-812d-0d6a3f517e31</string>
 </dict>
 </plist>
